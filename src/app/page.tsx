@@ -30,7 +30,7 @@ export default function Home() {
                     Welcome to my portfolio
                   </p>
                   <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
-                    Hi, I'm Betsegaw
+                    Hi, I&apos;m Betsegaw
                   </h1>
                   <p className="text-xl md:text-2xl text-foreground/70 mb-2">
                     Full Stack Developer
@@ -120,13 +120,13 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-12 items-center mt-12">
                 <div className="space-y-6">
                   <p className="text-lg text-foreground/80 leading-relaxed">
-                    I'm a passionate developer with a love for creating innovative
+                    I&apos;m a passionate developer with a love for creating innovative
                     solutions and bringing ideas to life through code. With expertise
                     in modern web technologies, I specialize in building responsive,
                     user-friendly applications that deliver exceptional experiences.
                   </p>
                   <p className="text-lg text-foreground/80 leading-relaxed">
-                    When I'm not coding, you can find me exploring new technologies,
+                    When I&apos;m not coding, you can find me exploring new technologies,
                     contributing to open-source projects, or sharing knowledge with
                     the developer community.
                   </p>
@@ -359,7 +359,7 @@ export default function Home() {
                 Get In Touch
               </h2>
               <p className="text-lg text-foreground/70 mb-12">
-                I'm always open to discussing new projects, creative ideas, or
+                I&apos;m always open to discussing new projects, creative ideas, or
                 opportunities to be part of your visions.
               </p>
             </ScrollAnimation>
