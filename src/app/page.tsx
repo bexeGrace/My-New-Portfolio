@@ -5,97 +5,192 @@ import ScrollAnimation from '@/components/ScrollAnimation';
 import Image from 'next/image';
 
 export default function Home() {
+  const skillStack = [
+    { name: 'Next.js', icon: 'https://cdn.simpleicons.org/nextdotjs/FFFFFF' },
+    { name: 'Supabase', icon: 'https://cdn.simpleicons.org/supabase/3ECF8E' },
+    { name: 'React', icon: 'https://cdn.simpleicons.org/react/61DAFB' },
+    { name: 'TypeScript', icon: 'https://cdn.simpleicons.org/typescript/3178C6' },
+    { name: 'Node.js', icon: 'https://cdn.simpleicons.org/nodedotjs/339933' },
+    { name: 'Python', icon: 'https://cdn.simpleicons.org/python/3776AB' },
+    { name: 'Tailwind CSS', icon: 'https://cdn.simpleicons.org/tailwindcss/06B6D4' },
+    { name: 'PostgreSQL', icon: 'https://cdn.simpleicons.org/postgresql/4169E1' },
+    { name: 'Git/GitHub', icon: 'https://cdn.simpleicons.org/git/F05032' },
+  ];
+
+  const focusAreas = [
+    {
+      icon: '🎨',
+      title: 'Visual Frontend Systems',
+      description:
+        'Interface architecture with strong design language, animation intent, and responsive detail.',
+      color: 'from-cyan-500/20 to-blue-600/20 border-cyan-400/30',
+    },
+    {
+      icon: '⚙️',
+      title: 'Product + Backend Thinking',
+      description:
+        'I build for outcomes: fast APIs, scalable data flow, and decisions that support long-term growth.',
+      color: 'from-violet-500/20 to-fuchsia-600/20 border-violet-400/30',
+    },
+    {
+      icon: '🚀',
+      title: 'Execution + Ownership',
+      description:
+        'From concept to deployment, I thrive in shipping meaningful experiences with polish and reliability.',
+      color: 'from-emerald-500/20 to-teal-600/20 border-emerald-400/30',
+    },
+  ];
+
+  const projects = [
+    {
+      name: 'The New Boston',
+      website: 'https://thenewboston.net',
+      github: 'https://github.com/bexeGrace/thenewboston-Frontend',
+      image: '/images/thenewboston.png',
+      description:
+        'Community-powered education platform frontend with a modern and intuitive learning experience.',
+    },
+    {
+      name: 'Brainbite.ai',
+      website: 'https://app.brainbite.ai',
+      github: null,
+      image: '/images/brainbite.png',
+      description:
+        'AI product experience designed for high-clarity interactions, fast content generation, and conversion.',
+    },
+    {
+      name: 'Community Retention',
+      website: 'https://app.communityretention.com',
+      github: null,
+      image: '/images/communityretention.png',
+      description:
+        'Retention platform helping communities increase engagement through actionable member insights.',
+    },
+    {
+      name: 'Sailtech Hotel Marketing',
+      website: 'https://app.sailtech.com',
+      github: null,
+      image: '/images/sail.png',
+      description:
+        'Marketing workflow product for hotels to coordinate campaigns and improve occupancy performance.',
+    },
+    {
+      name: 'Skilltrade',
+      website: null,
+      github: 'https://github.com/abe16s/SkillTrade',
+      image: '/images/skilltrade.jpg',
+      description:
+        'Service marketplace connecting skilled technicians with homeowners needing quality installation support.',
+    },
+  ];
+
   return (
     <>
       <Navigation />
       <main className="relative overflow-hidden">
-        {/* Background gradient effects */}
-        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 -left-4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 -right-4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl"></div>
+        <div className="fixed inset-0 -z-10 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.25),transparent_35%),radial-gradient(circle_at_85%_30%,rgba(14,165,233,0.25),transparent_35%),radial-gradient(circle_at_50%_80%,rgba(236,72,153,0.2),transparent_40%)]" />
+          <div className="absolute inset-0 noise-overlay opacity-30" />
         </div>
 
-        {/* Hero Section */}
         <section
           id="home"
-          className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 relative"
+          className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 pb-12 relative"
         >
-          <div className="max-w-6xl mx-auto w-full">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Text Content */}
-              <ScrollAnimation direction="right" className="text-center md:text-left">
-                <div className="mb-6">
-                  <p className="text-lg md:text-xl text-blue-600 dark:text-blue-400 mb-4 font-semibold">
-                    Welcome to my portfolio
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+              <ScrollAnimation direction="right" className="text-center lg:text-left">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 glass-effect mb-6">
+                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <p className="text-sm text-foreground/80 font-medium">Open to exciting collaborations</p>
+                </div>
+
+                <div className="space-y-5">
+                  <p className="text-lg md:text-xl text-cyan-300 font-semibold tracking-wide uppercase">
+                    Portfolio Experience
                   </p>
-                  <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
+                  <h1 className="text-5xl md:text-7xl font-black leading-[0.95] bg-gradient-to-r from-cyan-300 via-violet-300 to-pink-300 bg-clip-text text-transparent animate-gradient">
                     Hi, I&apos;m Betsegaw
                   </h1>
-                  <p className="text-xl md:text-2xl text-foreground/70 mb-2">
-                    Full Stack Developer
+                  <p className="text-xl md:text-2xl text-foreground/80 font-medium">
+                    Full-Stack Developer crafting expressive web products.
                   </p>
-                  <p className="text-lg md:text-xl text-foreground/60">
-                    Building beautiful and functional web experiences
+                  <p className="text-base md:text-lg text-foreground/65 max-w-xl mx-auto lg:mx-0">
+                    I blend visual storytelling, clean architecture, and user empathy to ship experiences
+                    that are memorable, fast, and deeply human.
                   </p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8">
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-10">
                   <a
                     href="#projects"
-                    className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300 relative overflow-hidden group"
+                    className="px-8 py-3 bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 text-white rounded-xl font-semibold hover:shadow-2xl hover:shadow-violet-600/40 hover:scale-[1.03] transition-all duration-300 relative overflow-hidden group"
                   >
                     <span className="relative z-10">View My Work</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-violet-600 to-cyan-500" />
                   </a>
                   <a
                     href="#contact"
-                    className="px-8 py-3 border-2 border-foreground/20 rounded-lg font-semibold hover:bg-foreground/5 hover:border-blue-500/50 transition-all duration-300"
+                    className="px-8 py-3 rounded-xl font-semibold border border-white/20 glass-effect hover:scale-[1.03] hover:border-cyan-300/40 transition-all duration-300"
                   >
-                    Get In Touch
+                    Let&apos;s Build Something
                   </a>
+                </div>
+
+                <div className="mt-10 grid grid-cols-3 gap-3 max-w-lg mx-auto lg:mx-0">
+                  {['Design-led', 'Performance-first', 'Product-focused'].map((badge) => (
+                    <div
+                      key={badge}
+                      className="text-xs md:text-sm text-foreground/80 py-2 px-3 rounded-full border border-white/15 glass-effect text-center"
+                    >
+                      {badge}
+                    </div>
+                  ))}
                 </div>
               </ScrollAnimation>
 
-              {/* Profile Picture */}
               <ScrollAnimation direction="left" delay={200}>
-                <div className="flex justify-center md:justify-end">
-                  <div className="relative w-64 h-64 md:w-80 md:h-80">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
-                    <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-foreground/10 shadow-2xl animate-float">
+                <div className="relative max-w-md mx-auto">
+                  <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-r from-cyan-500/40 via-violet-500/40 to-pink-500/40 blur-2xl animate-pulse" />
+                  <div className="relative glass-effect rounded-[2rem] p-6 md:p-8 border border-white/20 shadow-2xl">
+                    <div className="relative w-full aspect-square rounded-3xl overflow-hidden animate-float">
                       <Image
                         src="/images/hero.jpg"
                         alt="Betsegaw"
                         fill
                         className="object-cover"
                         priority
-                        sizes="(max-width: 768px) 256px, 320px"
+                        sizes="(max-width: 1024px) 70vw, 420px"
                       />
                     </div>
-                    <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-full border border-foreground/10 shadow-lg">
-                      <p className="text-sm font-semibold text-foreground">
-                        Available for hire
-                      </p>
+
+                    <div className="mt-5 grid grid-cols-2 gap-3">
+                      <div className="rounded-xl px-4 py-3 bg-white/5 border border-white/10">
+                        <p className="text-xs uppercase tracking-widest text-foreground/60">Based In</p>
+                        <p className="font-semibold text-foreground/90">Addis Ababa</p>
+                      </div>
+                      <div className="rounded-xl px-4 py-3 bg-white/5 border border-white/10">
+                        <p className="text-xs uppercase tracking-widest text-foreground/60">Specialty</p>
+                        <p className="font-semibold text-foreground/90">Web Products</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </ScrollAnimation>
             </div>
 
-            {/* Scroll Indicator */}
             <ScrollAnimation direction="up" delay={400}>
               <div className="mt-16 flex justify-center">
-                <a href="#about" className="text-foreground/50 hover:text-foreground/80 animate-bounce">
-                  <svg
-                    className="w-8 h-8 mx-auto"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                <a href="#about" className="text-foreground/60 hover:text-foreground transition-colors group">
+                  <div className="w-10 h-16 border border-white/20 rounded-full flex items-start justify-center p-2 glass-effect">
+                    <div className="w-1.5 h-3 bg-foreground/80 rounded-full animate-bounce" />
+                  </div>
+                  <svg className="w-6 h-6 mx-auto mt-3 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                      d="M12 5v14m0 0l-6-6m6 6l6-6"
                     />
                   </svg>
                 </a>
@@ -104,96 +199,91 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section */}
         <section
           id="about"
           className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 relative"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-foreground/5 to-transparent"></div>
-          <div className="max-w-4xl mx-auto relative z-10">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/[0.03] to-transparent" />
+          <div className="max-w-6xl mx-auto w-full relative z-10">
             <ScrollAnimation direction="down">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                About Me
+              <h2 className="text-4xl md:text-6xl font-bold mb-4 text-center bg-gradient-to-r from-cyan-300 via-violet-300 to-pink-300 bg-clip-text text-transparent">
+                More Than Code
               </h2>
+              <p className="text-center text-foreground/65 max-w-2xl mx-auto">
+                I build products that feel alive: clear interaction, strong motion language, and purposeful
+                decisions at every layer.
+              </p>
             </ScrollAnimation>
+
             <ScrollAnimation direction="up" delay={100}>
-              <div className="grid md:grid-cols-2 gap-12 items-center mt-12">
-                <div className="space-y-6">
-                  <p className="text-lg text-foreground/80 leading-relaxed">
-                    I&apos;m a passionate developer with a love for creating innovative
-                    solutions and bringing ideas to life through code. With expertise
-                    in modern web technologies, I specialize in building responsive,
-                    user-friendly applications that deliver exceptional experiences.
+              <div className="grid lg:grid-cols-2 gap-10 items-stretch mt-12">
+                <div className="glass-effect rounded-3xl p-7 md:p-9 border border-white/15">
+                  <p className="text-lg text-foreground/85 leading-relaxed">
+                    I&apos;m a passionate builder who treats every project as both engineering and
+                    storytelling. My work balances aesthetics with function, making each product
+                    visually striking without sacrificing usability.
                   </p>
-                  <p className="text-lg text-foreground/80 leading-relaxed">
-                    When I&apos;m not coding, you can find me exploring new technologies,
-                    contributing to open-source projects, or sharing knowledge with
-                    the developer community.
+                  <p className="text-lg text-foreground/75 leading-relaxed mt-5">
+                    When I&apos;m not shipping software, I&apos;m exploring modern tech, analyzing product
+                    experiences, and sharpening the craft that turns ideas into impact.
                   </p>
                 </div>
-                <ScrollAnimation direction="left" delay={200}>
-                  <div className="bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-2xl p-8 border border-foreground/10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                    <h3 className="text-2xl font-semibold mb-4">Quick Facts</h3>
-                    <ul className="space-y-3 text-foreground/80">
-                      <li className="flex items-center gap-3">
-                        <span className="text-blue-600 text-xl">✓</span>
-                        Years of experience in web development
-                      </li>
-                      <li className="flex items-center gap-3">
-                        <span className="text-blue-600 text-xl">✓</span>
-                        Passionate about clean code and best practices
-                      </li>
-                      <li className="flex items-center gap-3">
-                        <span className="text-blue-600 text-xl">✓</span>
-                        Always learning and adapting to new technologies
-                      </li>
-                      <li className="flex items-center gap-3">
-                        <span className="text-blue-600 text-xl">✓</span>
-                        Strong problem-solving and analytical skills
-                      </li>
-                    </ul>
-                  </div>
-                </ScrollAnimation>
+
+                <div className="grid gap-4">
+                  {focusAreas.map((area, index) => (
+                    <ScrollAnimation key={area.title} direction="left" delay={index * 120}>
+                      <div className={`rounded-2xl p-6 border bg-gradient-to-r ${area.color} hover:scale-[1.02] transition-all duration-300`}>
+                        <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                          <span className="text-2xl">{area.icon}</span>
+                          {area.title}
+                        </h3>
+                        <p className="text-foreground/75 leading-relaxed">{area.description}</p>
+                      </div>
+                    </ScrollAnimation>
+                  ))}
+                </div>
               </div>
             </ScrollAnimation>
           </div>
         </section>
 
-        {/* Skills Section */}
         <section
           id="skills"
           className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
         >
           <div className="max-w-6xl mx-auto w-full">
             <ScrollAnimation direction="down">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Skills & Technologies
+              <h2 className="text-4xl md:text-6xl font-bold mb-4 text-center bg-gradient-to-r from-cyan-300 via-violet-300 to-pink-300 bg-clip-text text-transparent">
+                My Creative Stack
               </h2>
-              <p className="text-center text-foreground/60 mb-12">
-                Technologies I work with
+              <p className="text-center text-foreground/65 mb-12">
+                Tools and technologies I use to design, build, and scale digital products.
               </p>
             </ScrollAnimation>
-            
+
             <ScrollAnimation direction="up" delay={100}>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-                {[
-                  'React',
-                  'Next.js',
-                  'TypeScript',
-                  'JavaScript',
-                  'Node.js',
-                  'Python',
-                  'Tailwind CSS',
-                  'Git',
-                ].map((skill, index) => (
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-14">
+                {skillStack.map((skill, index) => (
                   <ScrollAnimation
-                    key={skill}
+                    key={skill.name}
                     direction="fade"
                     delay={index * 50}
                   >
-                    <div className="bg-foreground/5 rounded-xl p-6 text-center hover:bg-foreground/10 hover:scale-110 transition-all duration-300 border border-foreground/10 hover:border-blue-500/50 hover:shadow-lg group">
-                      <div className="text-3xl mb-2 group-hover:scale-125 transition-transform duration-300">💻</div>
-                      <div className="font-semibold">{skill}</div>
+                    <div className="group relative rounded-2xl p-6 text-center border border-white/15 glass-effect hover:scale-105 transition-all duration-300 overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-violet-500/15 to-pink-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="relative mb-3 flex justify-center">
+                        <div className="w-10 h-10 rounded-xl bg-black/20 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <img
+                            src={skill.icon}
+                            alt={skill.name}
+                            width={22}
+                            height={22}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </div>
+                      </div>
+                      <div className="relative font-semibold">{skill.name}</div>
                     </div>
                   </ScrollAnimation>
                 ))}
@@ -202,28 +292,28 @@ export default function Home() {
 
             <ScrollAnimation direction="up" delay={200}>
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/10 rounded-xl p-6 border border-blue-500/20 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <div className="rounded-2xl p-6 border border-cyan-400/30 bg-gradient-to-br from-cyan-500/15 to-blue-600/10 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
                   <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                    <span className="text-2xl">🎨</span> Frontend
+                    <span className="text-2xl">🧩</span> Frontend
                   </h3>
-                  <p className="text-foreground/70">
-                    React, Next.js, TypeScript, Tailwind CSS, HTML5, CSS3
+                  <p className="text-foreground/75">
+                    React, Next.js, TypeScript, Tailwind CSS, Framer-style motion language
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-purple-500/10 to-purple-600/10 rounded-xl p-6 border border-purple-500/20 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <div className="rounded-2xl p-6 border border-violet-400/30 bg-gradient-to-br from-violet-500/15 to-fuchsia-600/10 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
                   <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                    <span className="text-2xl">⚙️</span> Backend
+                    <span className="text-2xl">🛠️</span> Backend
                   </h3>
-                  <p className="text-foreground/70">
-                    Node.js, Python, REST APIs, Database Design
+                  <p className="text-foreground/75">
+                    Node.js, Python, API design, data modeling, secure integration patterns
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-pink-500/10 to-pink-600/10 rounded-xl p-6 border border-pink-500/20 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <div className="rounded-2xl p-6 border border-emerald-400/30 bg-gradient-to-br from-emerald-500/15 to-teal-600/10 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
                   <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                    <span className="text-2xl">🛠️</span> Tools
+                    <span className="text-2xl">📈</span> Product Mindset
                   </h3>
-                  <p className="text-foreground/70">
-                    Git, VS Code, Docker, CI/CD, Testing
+                  <p className="text-foreground/75">
+                    Performance, maintainability, user clarity, and measurable business value
                   </p>
                 </div>
               </div>
@@ -231,88 +321,49 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects Section */}
         <section
           id="projects"
           className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 relative"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-foreground/5 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/[0.03] to-transparent" />
           <div className="max-w-6xl mx-auto w-full relative z-10">
             <ScrollAnimation direction="down">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-6xl font-bold mb-4 text-center bg-gradient-to-r from-cyan-300 via-violet-300 to-pink-300 bg-clip-text text-transparent">
                 Featured Projects
               </h2>
-              <p className="text-center text-foreground/60 mb-12">
-                Some of my recent work
+              <p className="text-center text-foreground/65 mb-12">
+                Selected builds where design, engineering, and product thinking come together.
               </p>
             </ScrollAnimation>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  name: 'The New Boston',
-                  website: 'https://thenewboston.net',
-                  github: 'https://github.com/bexeGrace/thenewboston-Frontend',
-                  image: '/images/thenewboston.png',
-                  description: 'Frontend for thenewboston platform - a community-driven educational platform.',
-                },
-                {
-                  name: 'Brainbite.ai',
-                  website: 'https://app.brainbite.ai',
-                  github: null,
-                  image: '/images/brainbite.png',
-                  description: 'AI-powered application for intelligent interactions and content generation.',
-                },
-                {
-                  name: 'Community Retention',
-                  website: 'https://app.communityretention.com',
-                  github: null,
-                  image: '/images/communityretention.png',
-                  description: 'Platform designed to help communities retain and engage their members effectively.',
-                },
-                {
-                  name: 'Sailtech Hotel Marketing',
-                  website: 'https://app.sailtech.com',
-                  github: null,
-                  image: '/images/sail.png',
-                  description: 'Marketing platform specifically designed for hotels to manage and optimize their marketing efforts.',
-                },
-                {
-                  name: 'Skilltrade',
-                  website: null,
-                  github: 'https://github.com/abe16s/SkillTrade',
-                  image: '/images/skilltrade.jpg',
-                  description: 'Hub connecting skilled technicians to customers for home installation and maintenance services.',
-                },
-              ].map((project, index) => (
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+              {projects.map((project, index) => (
                 <ScrollAnimation
                   key={project.name}
                   direction="up"
                   delay={index * 100}
                 >
-                  <div className="bg-background rounded-xl overflow-hidden border border-foreground/10 hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
+                  <article className="group rounded-2xl overflow-hidden border border-white/15 glass-effect hover:shadow-2xl hover:shadow-violet-900/40 hover:-translate-y-1 transition-all duration-300">
                     <div className="h-48 relative overflow-hidden">
                       <Image
                         src={project.image}
                         alt={project.name}
                         fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-xl font-semibold mb-2 group-hover:text-cyan-300 transition-colors">
                         {project.name}
                       </h3>
-                      <p className="text-foreground/70 mb-4">
-                        {project.description}
-                      </p>
+                      <p className="text-foreground/75 mb-4">{project.description}</p>
                       <div className="flex gap-2 mb-4 flex-wrap">
-                        <span className="text-xs bg-blue-500/20 text-blue-600 dark:text-blue-400 px-2 py-1 rounded">
+                        <span className="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">
                           React
                         </span>
-                        <span className="text-xs bg-purple-500/20 text-purple-600 dark:text-purple-400 px-2 py-1 rounded">
+                        <span className="text-xs bg-violet-500/20 text-violet-300 px-2 py-1 rounded">
                           TypeScript
                         </span>
                       </div>
@@ -322,7 +373,7 @@ export default function Home() {
                             href={project.website}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1 group/link"
+                            className="text-cyan-300 hover:text-cyan-200 font-semibold text-sm flex items-center gap-1 group/link"
                           >
                             Live Demo
                             <span className="group-hover/link:translate-x-1 transition-transform">→</span>
@@ -333,7 +384,7 @@ export default function Home() {
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-foreground/70 hover:text-foreground font-semibold text-sm flex items-center gap-1 group/link"
+                            className="text-foreground/80 hover:text-foreground font-semibold text-sm flex items-center gap-1 group/link"
                           >
                             GitHub
                             <span className="group-hover/link:translate-x-1 transition-transform">→</span>
@@ -341,31 +392,30 @@ export default function Home() {
                         )}
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </ScrollAnimation>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Contact Section */}
         <section
           id="contact"
           className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
         >
           <div className="max-w-2xl mx-auto w-full text-center">
             <ScrollAnimation direction="down">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Get In Touch
+              <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-300 via-violet-300 to-pink-300 bg-clip-text text-transparent">
+                Let&apos;s Create Something Magnetic
               </h2>
               <p className="text-lg text-foreground/70 mb-12">
-                I&apos;m always open to discussing new projects, creative ideas, or
-                opportunities to be part of your visions.
+                I&apos;m open to creative collaborations, impactful product work, and ideas that challenge the
+                ordinary.
               </p>
             </ScrollAnimation>
-            
+
             <ScrollAnimation direction="up" delay={100}>
-              <div className="bg-foreground/5 rounded-2xl p-8 border border-foreground/10 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="glass-effect rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <form className="space-y-6 text-left">
                   <div>
                     <label
@@ -378,7 +428,7 @@ export default function Home() {
                       type="text"
                       id="name"
                       name="name"
-                      className="w-full px-4 py-3 rounded-lg border border-foreground/20 bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-white/20 bg-white/5 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
                       placeholder="Your Name"
                     />
                   </div>
@@ -393,7 +443,7 @@ export default function Home() {
                       type="email"
                       id="email"
                       name="email"
-                      className="w-full px-4 py-3 rounded-lg border border-foreground/20 bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-white/20 bg-white/5 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -408,16 +458,16 @@ export default function Home() {
                       id="message"
                       name="message"
                       rows={5}
-                      className="w-full px-4 py-3 rounded-lg border border-foreground/20 bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-white/20 bg-white/5 focus:outline-none focus:ring-2 focus:ring-cyan-400 resize-none transition-all"
                       placeholder="Your message here..."
                     ></textarea>
                   </div>
                   <button
                     type="submit"
-                    className="w-full px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300 relative overflow-hidden group"
+                    className="w-full px-8 py-3 bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 text-white rounded-xl font-semibold hover:shadow-xl hover:shadow-violet-600/50 hover:scale-[1.02] transition-all duration-300 relative overflow-hidden group"
                   >
                     <span className="relative z-10">Send Message</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
                 </form>
               </div>
@@ -429,7 +479,7 @@ export default function Home() {
                   href="https://www.github.com/bexeGrace"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground/70 hover:text-foreground transition-all hover:scale-125 p-3 rounded-full hover:bg-foreground/10"
+                  className="text-foreground/70 hover:text-foreground transition-all hover:scale-125 p-3 rounded-full hover:bg-white/10"
                   aria-label="GitHub"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -440,7 +490,7 @@ export default function Home() {
                   href="https://www.linkedin.com/in/betsegaw-mesele-70136620a/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground/70 hover:text-foreground transition-all hover:scale-125 p-3 rounded-full hover:bg-foreground/10"
+                  className="text-foreground/70 hover:text-foreground transition-all hover:scale-125 p-3 rounded-full hover:bg-white/10"
                   aria-label="LinkedIn"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -452,8 +502,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="bg-foreground/5 py-8 text-center text-foreground/60 border-t border-foreground/10">
+        <footer className="bg-white/[0.03] py-8 text-center text-foreground/60 border-t border-white/10">
           <p>© {new Date().getFullYear()} Betsegaw. All rights reserved.</p>
         </footer>
       </main>
