@@ -75,15 +75,6 @@ body {
     }
   }
 
-  @keyframes pulse-slow {
-    0%, 100% {
-      opacity: 0.8;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
-
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -114,11 +105,18 @@ body {
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.05);
   }
+}
 
-  .noise-overlay {
-    background-image:
-      radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-    background-size: 3px 3px;
-    animation: pulse-slow 6s ease-in-out infinite;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }
